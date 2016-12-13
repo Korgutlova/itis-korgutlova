@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<marquee>My Beatiful Tasks</marquee>
+<table>
+{% for task in tasks %}
+    <tr>
+    <td>
+        {{ task }}
+    </td>
+    <td>
+        <a href="{% url "tasks:edit_task" task.id %}">Edit</a>
+    </td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
